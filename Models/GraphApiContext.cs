@@ -15,8 +15,20 @@ namespace GraphApi.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Node>().ToTable("Node");
-            modelBuilder.Entity<Edge>().ToTable("Edge");
+            //modelBuilder.Entity<Node>().ToTable("Node");
+            //modelBuilder.Entity<Edge>().ToTable("Edge");
+
+            modelBuilder.Entity<Edge>()
+                    .HasOne(m => m.Src)
+                    .WithMany(t => t.SrcEdges)
+                    .HasForeignKey(m => m.SrcID)
+                    .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Edge>()
+                    .HasOne(m => m.Dest)
+                    .WithMany(t => t.DestEdges)
+                    .HasForeignKey(m => m.DestID)
+                    .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
