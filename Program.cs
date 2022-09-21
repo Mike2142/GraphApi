@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connStr = builder.Configuration.GetConnectionString("GraphDb");
-builder.Services.AddDbContext<GraphApiContext>(opt => opt.UseSqlServer(connStr));
+builder.Services.AddDbContext<GraphApiContext>(opt => opt.UseLazyLoadingProxies().UseSqlServer(connStr));
 
 var app = builder.Build();
 

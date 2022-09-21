@@ -54,12 +54,17 @@ namespace GraphDbApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEdge(int id, Edge edge)
         {
-            if (id != edge.EdgeID)
+            var dbEdge = await _context.Edges.FindAsync(id);
+            if (dbEdge == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(edge).State = EntityState.Modified;
+            dbEdge.SrcID = edge.SrcID;
+            dbEdge.DestID = edge.DestID;
+            dbEdge.Distance = edge.Distance;
+            
+            _context.Entry(dbEdge).State = EntityState.Modified;
 
             try
             {
@@ -85,10 +90,21 @@ namespace GraphDbApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Edge>> PostEdge(Edge edge)
         {
-          if (_context.Edges == null)
-          {
-              return Problem("Entity set 'GraphApiContext.Edges'  is null.");
-          }
+            if (_context.Edges == null)
+            {
+                return Problem("Entity set 'GraphApiContext.Edges'  is null.");
+            }
+
+            var srcNode = await _context.Nodes.FindAsync(edge.SrcID);
+            var destNode = await _context.Nodes.FindAsync(edge.DestID);
+            if (srcNode == null || destNode == null)
+            {
+                return NotFound();
+            }
+
+            edge.Src = srcNode;
+            edge.Dest = destNode;
+
             _context.Edges.Add(edge);
             await _context.SaveChangesAsync();
 

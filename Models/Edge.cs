@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace GraphApi.Models
 {
@@ -12,7 +14,11 @@ namespace GraphApi.Models
         public int Distance { get; set; }
         public int DestID { get; set; }
 
-        public Node Src { get; set; }
-        public Node Dest { get; set; }
+        [JsonIgnore]
+        [ValidateNever]
+        public virtual Node Src { get; set; }
+        [JsonIgnore]
+        [ValidateNever]
+        public virtual Node Dest { get; set; }
     }
 }

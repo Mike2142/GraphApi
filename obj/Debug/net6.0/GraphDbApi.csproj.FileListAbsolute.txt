@@ -261,3 +261,5 @@
 /home/mkolyadin/contrib/GraphDbApi/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
 /home/mkolyadin/contrib/GraphDbApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /home/mkolyadin/contrib/GraphDbApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
+/home/mkolyadin/contrib/GraphDbApi/bin/Debug/net6.0/Castle.Core.dll
+/home/mkolyadin/contrib/GraphDbApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Proxies.dll
