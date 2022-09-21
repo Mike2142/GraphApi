@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+using GraphApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connStr = builder.Configuration.GetConnectionString("TodoDb");
-builder.Services.AddDbContext<TodoContext>(opt => opt.UseSqlServer(connStr));
+var connStr = builder.Configuration.GetConnectionString("GraphDb");
+builder.Services.AddDbContext<GraphApiContext>(opt => opt.UseSqlServer(connStr));
 
 var app = builder.Build();
 
