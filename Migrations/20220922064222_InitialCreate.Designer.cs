@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GraphDbApi.Migrations
 {
     [DbContext(typeof(GraphApiContext))]
-    [Migration("20220921140025_InitialCreate")]
+    [Migration("20220922064222_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

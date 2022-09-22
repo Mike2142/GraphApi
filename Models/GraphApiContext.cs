@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.CodeAnalysis;
 
 namespace GraphApi.Models
 {
@@ -15,8 +14,6 @@ namespace GraphApi.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Node>().ToTable("Node");
-            //modelBuilder.Entity<Edge>().ToTable("Edge");
 
             modelBuilder.Entity<Edge>()
                     .HasOne(m => m.Src)

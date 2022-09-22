@@ -10,7 +10,7 @@ namespace GraphApi.Models
         public int ID { get; private set;}
         public string? Name { get; set; }
 
-        public virtual ICollection<Edge>? SrcEdges { get; set;}
-        public virtual ICollection<Edge>? DestEdges { get; set;}
+        public virtual ICollection<Edge>? SrcEdges { get; private set;}
+        public virtual ICollection<Edge>? DestEdges { get; private set;}
     }
 }
