@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z8L5BgXtOHbBQUDfzwObfRfUndxZNoJEIVsLsbdjMXzwSj4x0NitGPSU+UUZeP00eYQ6sceQs6GCk/JwvE0p7g==",
+  "dgSpecHash": "ms2wear6Em8TAaRpdCVtRcyOUncVEisJ0DpPezAH/ciUSNq3keK/i9THBZcob661ysbwc3Z1e071a/DTzyMFQA==",
   "success": true,
   "projectFilePath": "/home/mkolyadin/contrib/GraphDbApi/GraphDbApi.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "/home/mkolyadin/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",
     "/home/mkolyadin/.nuget/packages/messagepackanalyzer/2.1.152/messagepackanalyzer.2.1.152.nupkg.sha512",
     "/home/mkolyadin/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.0/microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
+    "/home/mkolyadin/.nuget/packages/microsoft.aspnetcore.spaproxy/6.0.9/microsoft.aspnetcore.spaproxy.6.0.9.nupkg.sha512",
     "/home/mkolyadin/.nuget/packages/microsoft.bcl.asyncinterfaces/5.0.0/microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "/home/mkolyadin/.nuget/packages/microsoft.build/17.0.0/microsoft.build.17.0.0.nupkg.sha512",
     "/home/mkolyadin/.nuget/packages/microsoft.build.framework/17.0.0/microsoft.build.framework.17.0.0.nupkg.sha512",

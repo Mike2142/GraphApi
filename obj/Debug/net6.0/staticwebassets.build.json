@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "6+8exMfNF+bYiHjAIUOFRdot8UayMpzCd0Tq8KX4qT8=",
+  "Hash": "0MMoWDzMETDFmRAQAwmOaE8afLIswcNjo4FKrZ+52vw=",
   "Source": "GraphDbApi",
   "BasePath": "_content/GraphDbApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "GraphDbApi/wwwroot",
+      "Source": "GraphDbApi",
+      "ContentRoot": "/home/mkolyadin/contrib/GraphDbApi/wwwroot/",
+      "BasePath": "_content/GraphDbApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/mkolyadin/contrib/GraphDbApi/wwwroot/favicon.ico",
+      "SourceId": "GraphDbApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/mkolyadin/contrib/GraphDbApi/wwwroot/",
+      "BasePath": "_content/GraphDbApi",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/favicon.ico"
+    }
+  ]
 }
