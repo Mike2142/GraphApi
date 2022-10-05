@@ -1,31 +1,19 @@
-import { Component, Inject, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Node } from './interfaces/Node';
+import { Edge } from './interfaces/Edge';
+
 declare function cytoscape(object: any): any;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit, AfterViewInit {
-  @ViewChild('cy') cyDiv!: ElementRef;
+export class HomeComponent {
   graph: any;
-  graphElements: any[] = [];
+  graphElements: (Node | Edge)[] = [];
 
-  /*
-  [ // list of graph elements to start with
-    { // node a
-      data: { id: 'a' }
-    },
-    { // node b
-      data: { id: 'b' }
-    },
-    { // edge ab
-      data: { id: 'ab', source: 'a', target: 'b' }
-    }
-  ]
-  */
-
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(http: HttpClient) {
     http.get<any[]>("/Node").subscribe({
       next: result => {
         this.makeNodes(result);
@@ -34,10 +22,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       error: error => console.error(error)
     });
   }
-
-  ngOnInit() {}
-
-  ngAfterViewInit() {}
 
   makeNodes(nodes: any[]) {
     // push nodes
@@ -52,8 +36,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.makeEdge(edge);
       });
     });
-
-
   }
 
   makeEdge(edge: any) {
