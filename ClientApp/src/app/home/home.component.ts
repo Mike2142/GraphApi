@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Node } from './interfaces/Node';
-import { Edge } from './interfaces/Edge';
+import { Observable } from 'rxjs';
+
+import { Store, Select } from '@ngxs/store';
+import { GraphState } from '../graph.state'
+import { GetGraphData } from '../graph.actions';
 
 declare function cytoscape(object: any): any;
 
@@ -10,47 +13,36 @@ declare function cytoscape(object: any): any;
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  graph: any;
-  graphElements: (Node | Edge)[] = [];
+  @Select(GraphState) graphState$!: Observable<string[]>;
+  graph: any = undefined;
 
-  constructor(http: HttpClient) {
-    http.get<any[]>("/Node").subscribe({
-      next: result => {
-        this.makeNodes(result);
-        this.initGraph()
+  constructor(private http: HttpClient, private store: Store) {
+    this.store.dispatch(new GetGraphData());
+    
+    this.graphState$.subscribe({
+      next: (result: any) => {
+        this.renderGraph(result.elements);
       }, 
       error: error => console.error(error)
-    });
+    })    
   }
 
-  makeNodes(nodes: any[]) {
-    // push nodes
-    nodes.forEach(node => {
-      let newNode = {
-        data: {id: node.id}
-      }
-      this.graphElements.push(newNode);
+  renderGraph(elements: any){
+    if (!elements.length) {
+      return;
+    };
 
-      // push edges
-      node.srcEdges.forEach((edge: any) => {
-        this.makeEdge(edge);
-      });
-    });
-  }
+    // copy frozen data
+    let elemCopy = JSON.parse(JSON.stringify(elements));
 
-  makeEdge(edge: any) {
-    let edgeId = edge.srcID + '' + edge.destID;
-    let newEdge = { // edge ab
-      data: { id: edgeId, source: edge.srcID, target: edge.destID }
+    if (this.graph != undefined) {
+      this.graph.add(elemCopy);
+      return;
     }
 
-    this.graphElements.push(newEdge);
-  }
-
-  initGraph(){
     this.graph = cytoscape({
       container: document.querySelector("#cy"), // container to render in
-      elements: this.graphElements,
+      elements: elemCopy,
 
       style: [ // the stylesheet for the graph
         {
@@ -77,7 +69,6 @@ export class HomeComponent {
         name: 'grid',
         rows: 1
       }
-    
     });
   }
 }
