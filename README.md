@@ -8,11 +8,11 @@ Cоздание и редактирование направленного гр�
 - Frontend: Angular, NGXS, Cytoscape
 
 #### Демо
-- Backend https://youtu.be/_mknbkbO2w8
-- Frontend https://youtu.be/0Jwh4gMNWKs
+- Backend <a href="https://youtu.be/_mknbkbO2w8" target="_blank">демо</a> 
+- Frontend  <a href="https://youtu.be/0Jwh4gMNWKs" target="_blank">демо</a> 
 
 #### Благодарности
 Спасибо за задачу: Сергей Толкачев, Дмитрий Стражников, Bi Telecom
 
 #### Мой сайт-резюме
-http://mkolyadin.ru/cs.html
+<a href="http://mkolyadin.ru/cs.html" target="_blank">http://mkolyadin.ru/cs.html</a> 
