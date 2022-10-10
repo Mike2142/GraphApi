@@ -1,9 +1,9 @@
 Доброго дня!
 
-#### Проект GraphApi
+### Проект GraphApi
 Cоздание и редактирование направленного графа
 
-#### Стэк
+### Стэк
 Backend: .NET Core, Entity, SQL Server
 Frontend: Angular, NGXS, Cytoscape
 
