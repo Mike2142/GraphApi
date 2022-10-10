@@ -7,5 +7,9 @@ Cоздание и редактирование направленного гр�
 - Backend: .NET Core, Entity, SQL Server
 - Frontend: Angular, NGXS, Cytoscape
 
+#### Демо
+- Backend https://youtu.be/_mknbkbO2w8
+- Frontend https://youtu.be/0Jwh4gMNWKs
+
 #### Благодарности
 Спасибо за задачу: Сергей Толкачев, Дмитрий Стражников, Bi Telecom
