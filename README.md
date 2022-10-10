@@ -4,7 +4,7 @@
 Cоздание и редактирование направленного графа
 
 #### Стэк
-- Backend: .NET Core, Entity, SQL Server
+- Backend: .NET Core, Entity, SQL Server, Swagger
 - Frontend: Angular, NGXS, Cytoscape
 
 #### Демо
